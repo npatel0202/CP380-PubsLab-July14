@@ -1,0 +1,26 @@
+﻿@page
+@model CP380_PubsWeb.Pages.Jobs.IndexModel
+@{
+    ViewData["Jobs"] = "Jobs Detail";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Desc</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var j in Model.Jobs)
+            {
+                <tr>
+                    <td>@j.J_ID</td>
+                    <td>@j.Desc</td>
+                    <td>
+                        <a class="page-link" asp-route-id="@j.J_ID" asp-page="/Employees/Index">Jobs</a>
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>
